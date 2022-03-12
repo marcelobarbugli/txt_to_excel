@@ -1,7 +1,4 @@
 #!/bin/bash
-
-
-
 cat rateplan_report | awk '
        BEGIN{printf "PROD-BLNG-ID:" ";"; printf "BLNG-ELEM-CD:" ";"; printf "CUST-ARGT-ID:" ";"; printf "PBE-INSTC:" ";"; printf "CURRENCY-CD:" ";"; printf "DTRMNT-SET-ID:" ";"; printf "RATE-STRUC-VER-NBR:" ";"; printf "FX-DTRMNT-SET-ID:" ";"; printf "UNT-RATE:" ";"; printf "FLGFAL-AMT:" ";"; printf "NOTE:" "\n"};
          {
@@ -42,7 +39,6 @@ cat rateplan_report | awk '
 
         }
 ' > ratechange_report.csv
-
 
 echo " " | mailx -s "Rate Change report Excel File" -a ratechange_report.csv  marcelo.barbugli@ibm.com
                                                                                                           
